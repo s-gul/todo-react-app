@@ -7,11 +7,7 @@ function App() {
     return ((date.getMonth()-1) < 10 ? ('0'+(date.getMonth()-1)) : (date.getMonth()-1))  + '/' + ((date.getDate() < 10) ? ('0'+ date.getDate()) : date.getDate()) + '/' + date.getFullYear();
   };
 
-  const [todoItems, setTodoItems] = React.useState([
-    { text: "Learn about React", check:false, date: getTheDate()},
-    { text: "Meet friend for lunch", check:false, date: getTheDate()},
-    { text: "Build really cool todo app", check:false, date: getTheDate()}
-  ]);
+  const [todoItems, setTodoItems] = React.useState([]);
   const addTodo = text => {
     if(text.length <= 117){
       const newTodoItems = [...todoItems, {text:text, check:false, date: getTheDate()}];
